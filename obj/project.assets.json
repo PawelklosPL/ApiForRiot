@@ -249,23 +249,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\pawel\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Lecytyna Sojowa\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Angular Projects\\riotApi\\riotApi.csproj",
+      "projectUniqueName": "C:\\Users\\Lecytyna Sojowa\\Documents\\GitHub\\ApiForRiot\\riotApi.csproj",
       "projectName": "riotApi",
-      "projectPath": "C:\\Angular Projects\\riotApi\\riotApi.csproj",
-      "packagesPath": "C:\\Users\\pawel\\.nuget\\packages\\",
-      "outputPath": "C:\\Angular Projects\\riotApi\\obj\\",
+      "projectPath": "C:\\Users\\Lecytyna Sojowa\\Documents\\GitHub\\ApiForRiot\\riotApi.csproj",
+      "packagesPath": "C:\\Users\\Lecytyna Sojowa\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Lecytyna Sojowa\\Documents\\GitHub\\ApiForRiot\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\pawel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Lecytyna Sojowa\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -316,7 +312,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

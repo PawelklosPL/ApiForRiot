@@ -14,7 +14,7 @@ using Microsoft.Extensions.Logging;
 namespace riotApi
 {
     public class Startup
-    {
+    {   
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -47,6 +47,7 @@ namespace riotApi
             app.UseRouting();
 
             // app.UseAuthorization();
+            app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
             app.UseEndpoints(endpoints =>
             {
