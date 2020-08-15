@@ -4,3 +4,5 @@ Configs/RiotApiConf.cs
 Configs/RiotApiConf.cs
 *.dll
 *.pdb
+Configs/RiotApiConf.cs
+*.dll
