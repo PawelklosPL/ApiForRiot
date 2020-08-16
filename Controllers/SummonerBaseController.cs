@@ -17,8 +17,8 @@ namespace riotApi.Controllers
         {
             Region regionEnum = Region.Get(region);
             var riotApi = RiotApi.NewInstance(riotApiKey);
-            var dupa = await riotApi.SummonerV4.GetBySummonerNameAsync(regionEnum, name);
-            return Ok(dupa);
+            var result = await riotApi.SummonerV4.GetBySummonerNameAsync(regionEnum, name);
+            return Ok(result);
         }
 
         [HttpGet("GetBySummonerName2")]    
@@ -26,8 +26,8 @@ namespace riotApi.Controllers
         {
             Region regionEnum = Region.Get(getBySummoner.Region);
             var riotApi = RiotApi.NewInstance(riotApiKey);
-            var dupa = await riotApi.SummonerV4.GetBySummonerNameAsync(regionEnum, getBySummoner.SummonerName);
-            return Ok(dupa);
+            var result = await riotApi.SummonerV4.GetBySummonerNameAsync(regionEnum, getBySummoner.SummonerName);
+            return Ok(result);
         }
 
         [HttpGet("GetByAccountId/{name}")]
