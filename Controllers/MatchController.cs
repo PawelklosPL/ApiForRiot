@@ -34,11 +34,12 @@ namespace ApiForRiot.Controllers
 
                 matchToList.GameId = match.GameId; 
                 matchToList.Lane = match.Lane;
-                matchToList.PlatformId = match.Lane;
+                matchToList.PlatformId = match.PlatformId;
                 matchToList.Queue = match.Queue;
                 matchToList.Role = match.Role;
                 matchToList.Season = match.Season;
                 matchToList.Timestamp = match.Timestamp;
+                matchToList.Champion = match.Champion;
                 
                 var matchData = riotApi.MatchV4.GetMatch(regionEnum, match.GameId);
                 
@@ -77,7 +78,7 @@ namespace ApiForRiot.Controllers
                         winTeamOne = true;
                     }
                 }
-                matchToList.Win = winTeamOne;
+                matchToList.win = winTeamOne;
                 machesToReturn.Add(matchToList);
             }
             return Ok(machesToReturn.ToArray());
