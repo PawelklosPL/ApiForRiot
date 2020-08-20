@@ -41,6 +41,11 @@ namespace ApiForRiot.Controllers
                 matchToList.Timestamp = match.Timestamp;
                 matchToList.Champion = match.Champion;
                 
+                Champion champion = (Champion)match.Champion;
+                var championName = ChampionUtils.Name(champion);
+                
+                matchToList.championName = championName;
+
                 var matchData = riotApi.MatchV4.GetMatch(regionEnum, match.GameId);
                 
                 matchToList.gameDuration = matchData.GameDuration;

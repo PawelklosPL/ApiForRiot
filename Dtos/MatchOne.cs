@@ -1,3 +1,4 @@
+using MingweiSamuel.Camille.Enums;
 using MingweiSamuel.Camille.MatchV4;
 
 namespace ApiForRiot.Dtos
@@ -7,5 +8,6 @@ namespace ApiForRiot.Dtos
         public bool win { get; set; }
         public long gameDuration  { get; set; }
         public string gameMode { get; set; }
+        public string championName { get; set; }
     }
 }
