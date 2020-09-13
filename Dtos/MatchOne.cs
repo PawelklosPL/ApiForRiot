@@ -9,5 +9,6 @@ namespace ApiForRiot.Dtos
         public long gameDuration  { get; set; }
         public string gameMode { get; set; }
         public string championName { get; set; }
+        public Match matchInfo {get; set;}
     }
 }

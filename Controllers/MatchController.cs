@@ -17,6 +17,8 @@ namespace ApiForRiot.Controllers
     {
         public string riotApiKey = RiotApiConfiguration.RiotApiKey;
 
+
+
         [HttpGet("GetSummonerMatch/{name}/{region}/{matchesNumber}")]
         public async Task<IActionResult> GetSummonerMatch(string name, string region, int matchesNumber)
         {
@@ -39,9 +41,12 @@ namespace ApiForRiot.Controllers
                     matchToList.Season = match.Season;
                     matchToList.Timestamp = match.Timestamp;
                     matchToList.Champion = match.Champion;
+                    matchToList.matchInfo = await GetMatchInfoFromApi(match.GameId, region);
 
                     Champion champion = (Champion)match.Champion;
                     var championName = ChampionUtils.Name(champion);
+
+                    
 
                     matchToList.championName = championName;
 
@@ -93,16 +98,21 @@ namespace ApiForRiot.Controllers
                 return StatusCode(500, e);
             }
         }
-
-        [HttpGet("GetMatchInfo/{matchId}/{region}")]
-        public async Task<IActionResult> GetMatchInfo(long matchId, string region)
+        private async Task<Match> GetMatchInfoFromApi(long matchId, string region)
         {
-            try
-            {
                 Region regionEnum = Region.Get(region);
                 var riotApi = RiotApi.NewInstance(riotApiKey);
                 var matchData = await riotApi.MatchV4.GetMatchAsync(regionEnum, matchId);
-                return Ok(matchData);
+                return matchData;
+        }
+
+        [HttpGet("GetMatchInfo/{userName}/{region}/{matchId}")]
+        public async Task<IActionResult> GetMatchInfo(string userName, string region,int matchId)
+        {
+            try
+            {
+                Console.WriteLine("UserName:"+userName+" Region: "+region+" matchId:"+matchId);
+                return Ok(await GetSummonerMatch(userName, region, matchId));
             }
             catch (System.Exception e)
             {
