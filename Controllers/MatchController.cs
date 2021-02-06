@@ -119,5 +119,22 @@ namespace ApiForRiot.Controllers
                 return StatusCode(500, e);
             }
         }
+        
+        [HttpGet("GetMatchInfo/{matchId}/{region}")]
+        public async Task<IActionResult> GetMatchInfo(long matchId, string region)
+        {
+            try
+            {
+                Console.WriteLine("matchId:"+matchId);
+                Region regionEnum = Region.Get(region);
+                var riotApi = RiotApi.NewInstance(riotApiKey);
+                var summonerData = await riotApi.MatchV4.GetMatchAsync(regionEnum,matchId);
+                return Ok(summonerData);
+            }
+            catch (System.Exception e)
+            {
+                return StatusCode(500, e);
+            }
+        }
     }
 }

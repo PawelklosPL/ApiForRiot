@@ -51,7 +51,7 @@ namespace riotApi.Controllers
             try
             {
                 var riotApi = RiotApi.NewInstance(riotApiKey);
-                var result = riotApi.SummonerV4.GetByAccountId(Region.NA, name);
+                var result = await riotApi.SummonerV4.GetByAccountIdAsync(Region.NA, name);
                 return Ok(result);
             }
             catch (System.Exception e)
