@@ -8,3 +8,4 @@ Configs/RiotApiConf.cs
 *.dll
 Configs/RiotApiConf.cs
 Configs/RiotApiConf.cs
+bin/Debug/netcoreapp3.1/appsettings.json

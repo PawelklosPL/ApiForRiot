@@ -4,20 +4,25 @@ using System.Linq;
 using System.Threading.Tasks;
 using ApiForRiot.Dtos;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using MingweiSamuel.Camille;
 using MingweiSamuel.Camille.Enums;
 using MingweiSamuel.Camille.MatchV4;
-using riotApi.Configs;
 
 namespace ApiForRiot.Controllers
-{
+{ 
     [Route("api/[controller]")]
     [ApiController]
     public class MatchController : ControllerBase
     {
-        public string riotApiKey = RiotApiConfiguration.RiotApiKey;
+        private readonly IConfiguration _config;
+        private string riotApiKey = "";
 
-
+        public MatchController(IConfiguration config)
+        {
+            _config = config;
+            riotApiKey = _config.GetSection("AppSettings:Token").Value;
+        }
 
         [HttpGet("GetSummonerMatch/{name}/{region}/{matchesNumber}")]
         public async Task<IActionResult> GetSummonerMatch(string name, string region, int matchesNumber)

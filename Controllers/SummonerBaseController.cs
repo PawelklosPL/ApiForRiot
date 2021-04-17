@@ -1,8 +1,8 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using MingweiSamuel.Camille;
 using MingweiSamuel.Camille.Enums;
-using riotApi.Configs;
 
 namespace riotApi.Controllers
 {
@@ -10,7 +10,14 @@ namespace riotApi.Controllers
     [ApiController]
     public class SummonerBaseController : ControllerBase
     {
-        public string riotApiKey = RiotApiConfiguration.RiotApiKey;
+        private readonly IConfiguration _config;
+        private string riotApiKey = "";
+
+        public SummonerBaseController(IConfiguration config)
+        {
+            _config = config;
+            riotApiKey = _config.GetSection("AppSettings:Token").Value;
+        }
 
         [HttpGet("GetBySummonerName/{name}/{region}")]
         public async Task<IActionResult> GetBySummonerName(string name, string region)
