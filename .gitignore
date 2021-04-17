@@ -1,14 +1,5 @@
-
-Configs/RiotApiConf.cs
 *.cache
-Configs/RiotApiConf.cs
 *.dll
 *.pdb
-Configs/RiotApiConf.cs
-*.dll
-Configs/RiotApiConf.cs
-Configs/RiotApiConf.cs
-bin/Debug/netcoreapp3.1/appsettings.json
 appsettings.json
-bin/Debug/netcoreapp3.1/appsettings.json
-bin/Debug/netcoreapp3.1/appsettings.json
+bin/
