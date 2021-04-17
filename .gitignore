@@ -3,5 +3,5 @@
 *.pdb
 appsettings.json
 bin/
-obj/
+obj/*
 Properties/
