@@ -31,7 +31,7 @@ namespace riotApi.Controllers
             }
             catch (System.Exception e)
             {
-                var errorMessage = "Invalid riot api token.";
+                var errorMessage = "Invalid riot api token." + e.Message;
                 return StatusCode(403, errorMessage);
             }
         }
